@@ -1,0 +1,79 @@
+
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+.form-login {
+  margin-top: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 560px;
+}
+
+.title-cart {
+  padding: 24px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #33b5e5;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.cart-body {
+  padding: 24px 48px 20px 48px;
+}
+
+.cart-body a {
+  color: #007bff;
+}
+
+.checkbox-login {
+  margin: 3px 11px 3px 1px;
+  width: 18px;
+  height: 18px;
+}
+
+.title-input {
+  font-size: .8rem;
+  color: #757575;
+  padding-top: 8px;
+}
+
+.input-form {
+  padding: 4px;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+}
+
+.input-form:focus {
+  background-color: #ced4da;
+}
+
+.nav-form {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.button-login {
+  background-color: #33b5e5;
+  width: 100%;
+  padding: 8px 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
