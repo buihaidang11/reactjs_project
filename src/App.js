@@ -5,7 +5,7 @@ import Login from './components/login/Login';
 
 function App() {
   return (
-    <div className='form-login'>
+    <div className='flex w-full justify-center items-center mt-[180px]'>
       <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path='/home' element={<Home/>}/>
