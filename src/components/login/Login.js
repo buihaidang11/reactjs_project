@@ -36,7 +36,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex flex-col bg-[#fff] border-solid border-2 border-gray-300 w-full max-w-[560px]">
+    <div className="flex flex-col bg-[#fff] border-solid border-2 border-gray-300 w-full max-w-[560px] mt-[180px]">
       <div className="px-[20px] py-[24px] flex justify-center bg-[#33b5e5] text-white text-xl">BBS System</div>
       <div className="pt-[24px] pb-[20px] px-[48px]">
         <form>

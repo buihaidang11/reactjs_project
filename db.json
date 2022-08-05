@@ -3,17 +3,26 @@
         {
             "id": 1,
             "username": "dang1",
-            "password": "123"
+            "password": "123",
+            "name": "Bui Hai Dang"
         },
         {
             "id": 2,
-            "username": "da22",
-            "password": "2222"
+            "username": "thang2",
+            "password": "2222",
+            "name": "Hoang Duc Thang"
         },
         {
             "id": 3,
-            "username": "ng22",
-            "password": "21222"
+            "username": "linh33",
+            "password": "21222",
+            "name": "Nguyen Gia Linh"
+        },
+        {
+            "id": 4,
+            "username": "quang4",
+            "password": "234",
+            "name": "Ta Minh Quang"
         }
 
     ]
