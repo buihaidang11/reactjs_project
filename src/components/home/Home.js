@@ -1,24 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Login from '../login/Login';
+import Content from '../content/Content';
 import Nav from './Nav';
+import NavBar from './NavBar';
 
 const Home = () => {
     return (
-        <div className='grid grid-cols-6'>
-            <div className='col-span-1 px-[24px] pb-[24px] '>
+        <div>
+            <div className='px-3 pb-[24px] max-h-[100vh] overflow-auto shadow-2xl fixed w-[270px] bg-white z-50'>
                 <Nav></Nav>
             </div>
             
-            <div className='col-span-5'>
-                
-                <div className='flex mb-3 justify-around'>
-                    <h1 className='px-6'>Trang chu</h1>
-                    <Link to='/' element={<Login/>}>
-                        <button className='w-[120px] text-center py-4 bg-[#33b5e5]'>Dang xuat</button>
-                    </Link>
-                </div>
-                <img src='https://thienthoi.com.vn/wp-content/uploads/2020/07/20-cong-cu-thiet-ke-giao-dien-nguoi-dung-tot-nhat.jpg'/>
+            <div className='pl-[270px]'>
+                <NavBar></NavBar>
+                <Content></Content>
             </div>
         </div>
     );

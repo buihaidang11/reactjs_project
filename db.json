@@ -1,29 +1,139 @@
 {
-    "accounts": [
-        {
-            "id": 1,
-            "username": "dang1",
-            "password": "123",
-            "name": "Bui Hai Dang"
-        },
-        {
-            "id": 2,
-            "username": "thang2",
-            "password": "2222",
-            "name": "Hoang Duc Thang"
-        },
-        {
-            "id": 3,
-            "username": "linh33",
-            "password": "21222",
-            "name": "Nguyen Gia Linh"
-        },
-        {
-            "id": 4,
-            "username": "quang4",
-            "password": "234",
-            "name": "Ta Minh Quang"
-        }
-
-    ]
+  "accounts": [
+    {
+      "username": "dang1",
+      "password": "123",
+      "name": "Bui Hai Dang",
+      "position": "Thực tập sinh",
+      "id": 1
+    },
+    {
+      "username": "thang2",
+      "password": "2222",
+      "name": "Hoang Duc Thang",
+      "position": "Thử việc",
+      "id": 2
+    },
+    {
+      "username": "linh33",
+      "password": "21222",
+      "name": "Nguyen Gia Linh",
+      "position": "Nhân viên",
+      "id": 3
+    },
+    {
+      "username": "quang4",
+      "password": "234",
+      "name": "Ta Minh Quang",
+      "position": "Thực tập sinh",
+      "id": 4
+    },
+    {
+      "username": "phu5",
+      "password": "34",
+      "name": "Tang Tu Phu",
+      "position": "Nhân viên",
+      "id": 5
+    }
+  ],
+  "contents_top": [
+    {
+      "img": "https://bbs.hatoq.com/file-manager/photos/2/Artboard%207.png",
+      "title": "Lịch trực nhật tháng 8/2022",
+      "content": "Nhà sạch thì mát - Bát sạch ngon cơm Văn phòng không rác t...",
+      "id": 1
+    },
+    {
+      "img": "https://bbs.hatoq.com/file-manager/photos/8/Screenshot_20.png",
+      "title": "Happy birthday quý III.2022",
+      "content": "Wishing you a wonderful time ahead !!!",
+      "id": 2
+    }
+  ],
+  "contents_main": [
+    {
+      "img": "https://bbs.hatoq.com/file-manager/photos/8/Screenshot_20.png",
+      "title": "Party sinh nhật quý III/2022",
+      "time": "2022-08-10",
+      "location": "Sẽ được bật mí vào ngày 9/8/20...",
+      "para": "Party Quý III đang gõ cửa tường BBS nhà bạn !!! Đăng kí tham dự ngay thui !!!",
+      "id": 1
+    },
+    {
+      "img": "https://bbs.hatoq.com/file-manager/photos/2/Screehot_2.png",
+      "title": "VINH DANH MVP, MIP QUÝ I VÀ II/2022",
+      "time": "2022-07-15",
+      "location": "Bí mật",
+      "para": "Một sự kiện thường niên của JVB !!! Mỗi cống hiến đều đáng được ghi nhận!!!",
+      "id": 2
+    },
+    {
+      "img": "https://bbs.hatoq.com/file-manager/photos/2/Mesa%20de%20trabajo%201.png",
+      "title": "GIẢI ĐẤU BILLAC TOÀN JVB LẦN THỨ NHẤT",
+      "time": "2022-07-06",
+      "location": "Bí mật",
+      "para": "GIẢI ĐẤU BILLAC TOÀN JVB LẦN THỨ NHẤT",
+      "id": 3
+    },
+    {
+      "img": "https://bbs.hatoq.com/file-manager/photos/2/Mesa%20de%20trabajo%201.png",
+      "title": "GIẢI ĐẤU BILLAC TOÀN JVB LẦN THỨ NHẤT",
+      "time": "2022-07-06",
+      "location": "Bí mật",
+      "para": "GIẢI ĐẤU BILLAC TOÀN JVB LẦN THỨ NHẤT",
+      "id": 4
+    }
+  ],
+  "project": [
+    {
+      "name": "Bridal",
+      "use": ["Vue 3", ".NetCore"],
+      "id": 1
+    },
+    {
+      "name": "Magento Booking",
+      "use": ["Magento"],
+      "id": 2
+    },
+    {
+      "name": "Tabi navi",
+      "use": [],
+      "id": 3
+    },
+    {
+      "name": "Luvina - Nitori",
+      "use": ["gg map api", "ciel2"],
+      "id": 4
+    },
+    {
+      "name": "Luvina - T&amp;G",
+      "use": ["Java"],
+      "id": 5
+    },
+    {
+      "name": "cmstudio",
+      "use": [],
+      "id": 6
+    },
+    {
+      "name": "Kardia",
+      "use": [],
+      "id": 7
+    },
+    {
+      "name": "CDNext, EQ, EQMS",
+      "use": ["Laravel", "NextJS", "Docker"],
+      "id": 8
+    },
+    {
+      "name": "PIAS - Magento",
+      "use": ["Magento 2"],
+      "id": 9
+    },
+    {
+      "name": "NOC",
+      "use": ["PHP Lumen", "ReactJS"],
+      "id": 10
+    }
+  ]
 }
