@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 body {
-  font-family: Roboto, sans-serif;
+  font-family: sans-serif;
   font-weight: 400;
+}
+
+.input_login:focus {
+  border-bottom: 1px solid rgb(53, 103, 255);
+}
+
+.vertical-nav {
+  height: -webkit-fill-available;
 }

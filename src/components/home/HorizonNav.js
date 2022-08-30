@@ -1,18 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "../login/Login";
 
-const NavBar = () => {
-
+const HorizonNav = () => {
   const [userHeader, setUserHeader] = useState(true);
 
   const handleUserHeader = () => {
-    setUserHeader( prevState => !prevState)
+    setUserHeader((prevState) => !prevState);
   };
 
   return (
-    <div className="grid grid-cols-5 py-2 pb-3 bg-[#97bfe4] flex justify-between shadow-md w-full fixed">
+    <div className="grid grid-cols-5 py-2 pb-3 pl-[270px] bg-[#97bfe4] shadow-md w-full fixed">
       <div className="col-span-3 py-2 px-4 flex items-center">
         <a href="/Home" className="px-4 py-2 text-white">
           Giờ làm việc
@@ -31,23 +30,33 @@ const NavBar = () => {
         </a>
       </div>
 
-      <div className="flex col-span-2 pr-4 pl-12">
+      <div className="flex col-span-2 pr-4 pl-12 justify-end">
         <div className="flex items-center">
           <img
             className="h-10 w-10"
             src="https://bbs.hatoq.com/dist/img/no-avatar.png"
+            alt=""
           />
         </div>
         <div
           className="flex items-center text-white cursor-pointer relative"
           onClick={handleUserHeader}
         >
-          <a className="pl-4 py-3">Bùi Hải Đăng</a>
+          <div className="pl-4 py-3">Bùi Hải Đăng</div>
           <i className="fa-solid fa-caret-down px-1"></i>
-          <div className={userHeader ? 'hidden' : 
-          "block absolute top-12 text-[#65717e] px-2 min-w-[9.5rem] border border-2 bg-white rounded-sm text-sm font-thin"}>
-            <div className="block py-3 px-2 hover:bg-[#007bff] hover:text-white">Thiết lập cá nhân</div>
-            <div className=" py-3 px-2 hover:bg-[#007bff] hover:text-white">Đổi mật khẩu</div>
+          <div
+            className={
+              userHeader
+                ? "hidden"
+                : "block absolute top-12 text-[#65717e] px-2 min-w-[9.5rem] border-2 bg-white rounded-sm text-sm font-thin"
+            }
+          >
+            <div className="block py-3 px-2 hover:bg-[#007bff] hover:text-white">
+              Thiết lập cá nhân
+            </div>
+            <div className=" py-3 px-2 hover:bg-[#007bff] hover:text-white">
+              Đổi mật khẩu
+            </div>
             <Link to="/" element={<Login />}>
               <div className="text-centerpy-2 my-3 py-2 px-2 border-t-2 hover:bg-[#007bff] hover:text-white">
                 Đăng xuất
@@ -61,4 +70,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default HorizonNav;

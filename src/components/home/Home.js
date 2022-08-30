@@ -1,21 +1,24 @@
-import React from 'react';
-import Content from '../content/Content';
-import Nav from './Nav';
-import NavBar from './NavBar';
+import React from "react";
+import Content from "../content/Content";
+import VerticalNav from "./VerticalNav";
+import HorizonNav from "./HorizonNav";
 
 const Home = () => {
-    return (
-        <div>
-            <div className='px-3 pb-[24px] max-h-[100vh] overflow-auto shadow-2xl fixed w-[270px] bg-white z-50'>
-                <Nav></Nav>
-            </div>
-            
-            <div className='pl-[270px]'>
-                <NavBar></NavBar>
-                <Content></Content>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div
+        className="vertical-nav px-3 pb-[24px] lg:max-h-[100vh] overflow-auto 
+        fixed w-[270px] bg-white z-50 shadow-xl"
+      >
+        <VerticalNav />
+      </div>
+
+      <div>
+        <HorizonNav />
+        <Content />
+      </div>
+    </div>
+  );
 };
 
 export default Home;
