@@ -44,26 +44,21 @@ const ContentRight = () => {
         <div>
           <div className="border-grey border-2 border-b-0">
             {projectNew.length > 0 &&
-              projectNew.map((item, i) => {
-                return (
-                  <div key={i++}>
-                    {" "}
-                    <div className="px-5 py-3">
-                      <strong>{item.name}</strong>
-                      <div>
-                        {item.use.map((result, j) => {
-                          return (
-                            <h5 className="text-[16px] text-grey" key={j++}>
-                              {result}
-                            </h5>
-                          );
-                        })}
-                      </div>
+              projectNew.map((item, i) => (
+                <div key={i++}>
+                  <div className="px-5 py-3">
+                    <strong>{item.name}</strong>
+                    <div>
+                      {item.use.map((result, j) => (
+                        <p className="text-[14px] text-gray-600" key={j++}>
+                          {result}
+                        </p>
+                      ))}
                     </div>
-                    <hr />
                   </div>
-                );
-              })}
+                  <hr />
+                </div>
+              ))}
           </div>
         </div>
       </div>

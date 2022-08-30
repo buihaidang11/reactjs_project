@@ -24,7 +24,7 @@ const Login = () => {
     });
     array.length
       ? navigate("Home")
-      : setMessage("!Thong tin dang nhap khong chinh xac");
+      : setMessage("Thông tin đăng nhập không chính xác");
   };
 
   useEffect(() => {

@@ -5,7 +5,6 @@ const ContentMain = () => {
   const [contentMain, setContentMain] = useState([]);
 
   useEffect(() => {
-    console.log(process.env);
     getContentMain()
       .then((content) => {
         setContentMain(content);
