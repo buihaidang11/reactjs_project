@@ -7,10 +7,34 @@ body {
   font-weight: 400;
 }
 
-.input_login:focus {
+.input-login {
+  height: 40px;
+}
+
+.input-login:focus {
   border-bottom: 1px solid rgb(53, 103, 255);
 }
 
 .vertical-nav {
   height: -webkit-fill-available;
+}
+
+.form-input {
+  padding-top: 18px;
+  transition: 0.25s ease;
+}
+
+.form-label {
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+}
+
+.input-login:not(:placeholder-shown) + .label-login,
+.input-login:focus + .label-login {
+  top: 0;
+  display: inline-block;
+  transition: 0.25s ease;
+  color: rgb(53, 104, 255);
+  padding: 0 3px;
 }

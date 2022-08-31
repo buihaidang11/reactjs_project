@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
+  const navLogin = useNavigate();
   const [account, setAccount] = useState({
     username: "",
     password: "",
@@ -13,7 +13,7 @@ const Login = () => {
   const [message, setMessage] = useState("");
 
   const handleLogin = () => {
-    const array = user.filter((item) => {
+    const checkAccount = user.filter((item) => {
       if (
         item.username === account.username &&
         item.password === account.password
@@ -22,8 +22,8 @@ const Login = () => {
       }
       return "";
     });
-    array.length
-      ? navigate("Home")
+    checkAccount.length
+      ? navLogin("Home")
       : setMessage("Thông tin đăng nhập không chính xác");
   };
 
@@ -45,28 +45,38 @@ const Login = () => {
       </div>
       <div className="pt-[24px] pb-[20px] px-[48px]">
         <form>
-          <label className="label_login text-xm text-[#757575]">E-mail</label>
-          <input
-            className="input_login p-1 w-full text-xm leading-4 border-b border-grey-800 h-8 mb-2 outline-none"
-            name="username"
-            value={account.username}
-            onChange={(e) => {
-              setAccount({ ...account, username: e.target.value });
-              setMessage("");
-            }}
-            type="text"
-          />
-          <label className="label_login text-xm text-[#757575]">Mật khẩu</label>
-          <input
-            className="input_login p-1 w-full text-xm leading-4 border-b border-grey-800 h-8 outline-none"
-            name="password"
-            value={account.password}
-            onChange={(e) => {
-              setAccount({ ...account, password: e.target.value });
-              setMessage("");
-            }}
-            type="password"
-          />
+          <div className="form-input relative">
+            <input
+              className="input-login p-1 w-full text-xm leading-4 border-b border-grey-800 h-8 mb-2 outline-none"
+              name="username"
+              value={account.username}
+              placeholder=" "
+              onChange={(e) => {
+                setAccount({ ...account, username: e.target.value });
+                setMessage("");
+              }}
+              type="text"
+            />
+            <label className="label-login text-xm text-[#757575] absolute left-0 top-1/2">
+              E-mail
+            </label>
+          </div>
+          <div className="form-input relative">
+            <input
+              className="input-login p-1 w-full text-xm leading-4 border-b border-grey-800 h-8 outline-none"
+              name="password"
+              placeholder=" "
+              value={account.password}
+              onChange={(e) => {
+                setAccount({ ...account, password: e.target.value });
+                setMessage("");
+              }}
+              type="password"
+            />
+            <label className="label-login text-xm text-[#757575] absolute top-1/2 left-0">
+              Mật khẩu
+            </label>
+          </div>
           <div className="flex p-[20px] justify-around">
             <div>
               <label className="flex items-center">
