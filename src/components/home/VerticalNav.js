@@ -80,10 +80,13 @@ const VerticalNav = () => {
         </p>
         {navHome.length > 0 &&
           navHome.map((item, i) => (
-            <div className="flex border-b-2 cursor-pointer nav_home pl-5 py-3" key={i++}>
+            <div
+              className="flex border-b-2 cursor-pointer nav_home pl-5 py-3"
+              key={i++}
+            >
               <i
                 className={`${item.icon} ${item.color_icon} text-[#007BFF] flex items-center`}
-              ></i>
+              />
               <div className="pl-5">{item.content}</div>
             </div>
           ))}

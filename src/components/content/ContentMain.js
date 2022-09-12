@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import urlPath from "../../lib/constant";
 
 const ContentMain = () => {
   const [contentMain, setContentMain] = useState([]);
@@ -9,14 +10,14 @@ const ContentMain = () => {
       .then((content) => {
         setContentMain(content);
       })
-      .catch(() => {
-        console.log("Loi");
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
   const getContentMain = async () => {
     const response = await axios.get(
-      `${process.env.REACT_APP_DB}/${process.env.REACT_APP_CONTENTMAIN}`
+      `${process.env.REACT_APP_DB}${urlPath.contentMain}`
     );
     return response.data;
   };
@@ -28,7 +29,7 @@ const ContentMain = () => {
           contentMain.map((item, i) => (
             <div className="grid grid-cols-12" key={i++}>
               <div className="col-span-5 py-2">
-                <img className="rounded-sm" src={item.img} alt="" />
+                <img className="rounded-sm w-full" src={item.img} alt="" />
               </div>
               <div className="col-span-7 py-2 pl-8">
                 <h2 className="text-[18px] font-semibold">{item.title}</h2>

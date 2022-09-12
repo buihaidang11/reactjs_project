@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import urlPath from "../../lib/constant";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Login = () => {
-  const navLogin = useNavigate();
-  const [account, setAccount] = useState({
-    username: "",
-    password: "",
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      username: Yup.string().required("Chua nhap tai khoan"),
+      password: Yup.string().required("Chua nhap mat khau"),
+    }),
+    onSubmit: (values) => handleLogin(values),
   });
+  const navLogin = useNavigate();
 
   const [user, setUser] = useState([]);
   const [message, setMessage] = useState("");
-
-  const handleLogin = () => {
+  const handleLogin = (account) => {
+    console.log(account);
     const checkAccount = user.filter((item) => {
       if (
         item.username === account.username &&
@@ -33,7 +43,7 @@ const Login = () => {
 
   const fetchData = async () => {
     const result = await axios.get(
-      `${process.env.REACT_APP_DB}/${process.env.REACT_APP_ACCOUNT}`
+      `${process.env.REACT_APP_DB}${urlPath.login}`
     );
     setUser(result.data);
   };
@@ -44,39 +54,40 @@ const Login = () => {
         BBS System
       </div>
       <div className="pt-[24px] pb-[20px] px-[48px]">
-        <form>
+        <form onSubmit={formik.handleSubmit}>
           <div className="form-input relative">
             <input
+              type="text"
               className="input-login p-1 w-full text-xm leading-4 border-b border-grey-800 h-8 mb-2 outline-none"
               name="username"
-              value={account.username}
+              value={formik.values.username}
+              onChange={formik.handleChange}
               placeholder=" "
-              onChange={(e) => {
-                setAccount({ ...account, username: e.target.value });
-                setMessage("");
-              }}
-              type="text"
             />
-            <label className="label-login text-xm text-[#757575] absolute left-0 top-1/2">
+            <label className="label-login text-[#757575] absolute left-0 top-1/2">
               E-mail
             </label>
           </div>
+
+          {formik.touched.username && formik.errors.username ? (
+            <div className="text-sm text-red-500">{formik.errors.username}</div>
+          ) : null}
           <div className="form-input relative">
             <input
+              type="password"
               className="input-login p-1 w-full text-xm leading-4 border-b border-grey-800 h-8 outline-none"
               name="password"
               placeholder=" "
-              value={account.password}
-              onChange={(e) => {
-                setAccount({ ...account, password: e.target.value });
-                setMessage("");
-              }}
-              type="password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
             />
-            <label className="label-login text-xm text-[#757575] absolute top-1/2 left-0">
+            <label className="label-login text-[#757575] absolute top-1/2 left-0">
               Mật khẩu
             </label>
           </div>
+          {formik.touched.password && formik.errors.password ? (
+            <div className="text-sm text-red-500">{formik.errors.password}</div>
+          ) : null}
           <div className="flex p-[20px] justify-around">
             <div>
               <label className="flex items-center">
@@ -94,12 +105,12 @@ const Login = () => {
             </div>
           </div>
 
-          <div
+          <button
             className="bg-[#33b5e5] w-full py-[12px] px-[20px] text-white mb-[20px] cursor-pointer text-center"
-            onClick={handleLogin}
+            type="submit"
           >
             Đăng nhập
-          </div>
+          </button>
           {message && <div className="text-[red]">{message}</div>}
         </form>
       </div>

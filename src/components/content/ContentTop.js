@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import urlPath from "../../lib/constant";
 
 const ContentTop = () => {
   const [contentTop, setContentTop] = useState([]);
@@ -9,14 +10,14 @@ const ContentTop = () => {
       .then((content) => {
         setContentTop(content);
       })
-      .catch(() => {
-        console.log("Loi");
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
   const getContentTop = async () => {
     const response = await axios.get(
-      `${process.env.REACT_APP_DB}/${process.env.REACT_APP_CONTENTTOP}`
+      `${process.env.REACT_APP_DB}${urlPath.contentTop}`
     );
     return response.data;
   };

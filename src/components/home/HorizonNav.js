@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import Login from "../login/Login";
 
 const HorizonNav = () => {
-  const [userHeader, setUserHeader] = useState(true);
+  const [userDropDown, setUserDropDown] = useState(true);
 
-  const handleUserHeader = () => {
-    setUserHeader((prevState) => !prevState);
+  const handleDropDown = () => {
+    setUserDropDown((prevState) => !prevState);
   };
 
   return (
@@ -40,13 +40,13 @@ const HorizonNav = () => {
         </div>
         <div
           className="flex items-center text-white cursor-pointer relative"
-          onClick={handleUserHeader}
+          onClick={handleDropDown}
         >
           <div className="pl-4 py-3">Bùi Hải Đăng</div>
           <i className="fa-solid fa-caret-down px-1"></i>
           <div
             className={
-              userHeader
+              userDropDown
                 ? "hidden"
                 : "block absolute top-12 text-[#65717e] px-2 min-w-[9.5rem] border-2 bg-white rounded-sm text-sm font-thin"
             }

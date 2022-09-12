@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import urlPath from "../../lib/constant";
 
 const ContentRight = () => {
   const [projectNew, setProjectNew] = useState([]);
@@ -9,14 +10,14 @@ const ContentRight = () => {
       .then((content) => {
         setProjectNew(content);
       })
-      .catch(() => {
-        console.log("Loi");
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
   const getProjectNew = async () => {
     const response = await axios.get(
-      `${process.env.REACT_APP_DB}/${process.env.REACT_APP_PROJECT}`
+      `${process.env.REACT_APP_DB}${urlPath.project}`
     );
     return response.data;
   };

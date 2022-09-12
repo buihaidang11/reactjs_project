@@ -35,6 +35,5 @@ body {
   top: 0;
   display: inline-block;
   transition: 0.25s ease;
-  color: rgb(53, 104, 255);
-  padding: 0 3px;
+  font-size: 14px;
 }
